@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ordisoftware.NutritionManager;
 
-internal class Nutriment
+sealed class Nutriment
 {
 
 }
