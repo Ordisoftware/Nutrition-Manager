@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nutrition Manager (vs2022)", "Nutrition Manager (vs2022).csproj", "{BBED54DA-8843-43C8-BC66-1FD655B5FADC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBED54DA-8843-43C8-BC66-1FD655B5FADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBED54DA-8843-43C8-BC66-1FD655B5FADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBED54DA-8843-43C8-BC66-1FD655B5FADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBED54DA-8843-43C8-BC66-1FD655B5FADC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CED4AB01-04B4-4B6F-A133-365CE947EC6B}
+	EndGlobalSection
+EndGlobal
