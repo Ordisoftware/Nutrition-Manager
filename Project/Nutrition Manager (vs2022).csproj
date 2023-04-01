@@ -437,7 +437,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Source\Database\" />
+    <Folder Include="Source\Forms\Boxes\" />
+    <Folder Include="Source\Forms\Config\" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommandLineParser">
       <Version>2.9.1</Version>
