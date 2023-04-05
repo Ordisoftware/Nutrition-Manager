@@ -410,6 +410,9 @@
     <EmbeddedResource Include="Source\Common\Core\WinForms\WebUpdateForm.resx">
       <DependentUpon>WebUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\README.md">
+      <Link>README.md</Link>
+    </None>
     <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -420,7 +423,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -499,7 +501,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="IDisposableAnalyzers">
-      <Version>4.0.3</Version>
+      <Version>4.0.4</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -525,6 +527,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\README.html">
+      <Link>README.html</Link>
+      <DependentUpon>README.md</DependentUpon>
+    </Content>
     <Content Include="..\Setup\OrdisoftwareNutritionManagerSetup.iss">
       <Link>Properties\OrdisoftwareNutritionManagerSetup.iss</Link>
     </Content>
