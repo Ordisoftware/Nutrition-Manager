@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Core;
 
 using System.Drawing.Text;
@@ -247,10 +247,11 @@ static class FormsHelper
   /// </summary>
   /// <param name="form">The form.</param>
   /// <param name="source">The source form.</param>
+  [SuppressMessage("Roslynator", "RCS1146:Use conditional access.", Justification = "N/A")]
   static public void CenterToFormElseMainFormElseScreen(this Form form, Form source)
   {
     if ( form is null ) return;
-    if ( source?.Visible == true && source.WindowState != FormWindowState.Minimized )
+    if ( source is not null && source.Visible && source.WindowState != FormWindowState.Minimized )
       form.Center(source.Bounds);
     else
       form.CenterToMainFormElseScreen();
@@ -302,7 +303,8 @@ static class FormsHelper
   /// <param name="dialog">True if show dialog.</param>
   static public void Popup(this Form form, Form sender = null, bool dialog = false)
   {
-    if ( form?.IsDisposed != false ) return;
+    if ( form is null ) return;
+    if ( form.IsDisposed ) return;
     if ( form.InvokeRequired )
     {
       var method = new PopupMethod(Popup);
@@ -347,6 +349,7 @@ static class FormsHelper
     form.TopMost = true;
     form.BringToFront();
     form.TopMost = temp;
+    form.Activate();
   }
 
   /// <summary>
@@ -394,7 +397,7 @@ static class FormsHelper
   /// <summary>
   /// Duplicate menu subitems.
   /// </summary>
-  static public void DuplicateTo(this ToolStripDropDownItem source, ToolStripMenuItem destination, bool noshortcuts = true)
+  static public void DuplicateTo(this ToolStripDropDownItem source, ToolStripMenuItem destination, bool noShortcuts = true)
   {
     var items = new List<ToolStripItem>();
     foreach ( ToolStripItem item in source.DropDownItems )
@@ -402,7 +405,7 @@ static class FormsHelper
         if ( item is ToolStripMenuItem menuItem )
         {
           var newitem = menuItem.Clone();
-          if ( noshortcuts ) newitem.ShortcutKeys = Keys.None;
+          if ( noShortcuts ) newitem.ShortcutKeys = Keys.None;
           items.Add(newitem);
         }
         else
@@ -415,7 +418,7 @@ static class FormsHelper
   /// <summary>
   /// Duplicate menu sub-items.
   /// </summary>
-  static public void DuplicateTo(this ContextMenuStrip source, ToolStripMenuItem destination, bool noshortcuts = true)
+  static public void DuplicateTo(this ContextMenuStrip source, ToolStripMenuItem destination, bool noShortcuts = true)
   {
     var items = new List<ToolStripItem>();
     foreach ( ToolStripItem item in source.Items )
@@ -423,7 +426,7 @@ static class FormsHelper
         if ( item is ToolStripMenuItem menuItem )
         {
           var newitem = menuItem.Clone();
-          if ( noshortcuts ) newitem.ShortcutKeys = Keys.None;
+          if ( noShortcuts ) newitem.ShortcutKeys = Keys.None;
           items.Add(newitem);
         }
         else
