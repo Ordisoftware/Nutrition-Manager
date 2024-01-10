@@ -8,7 +8,7 @@
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ordisoftware")]
 [assembly: AssemblyProduct("www.ordisoftware.com/projects/nutrition-manager")]
-[assembly: AssemblyCopyright("Copyright 2012-2023 Olivier Rogier")]
+[assembly: AssemblyCopyright("Copyright 2024 Olivier Rogier")]
 [assembly: AssemblyTrademark("www.ordisoftware.com")]
 [assembly: AssemblyCulture("")]
 
