@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -35,13 +35,17 @@ public class SQLiteNetORM : SQLiteConnection
   static public string ProviderName { get; private set; }
     = SysTranslations.NothingSlot.GetLang().TrimFirstLast().Titleize();
 
-  static public int DefaultOptimizeDaysInterval { get; set; } = Globals.DaysOfWeekCount;
+  static public int DefaultOptimizeDaysInterval { get; set; }
+    = Globals.DaysOfWeekCount;
 
-  public SQLiteNetORM(SQLiteConnectionString connectionString) : base(connectionString) { }
+  public SQLiteNetORM(SQLiteConnectionString connectionString)
+    : base(connectionString) { }
 
-  public SQLiteNetORM(string databasePath, bool storeDateTimeAsTicks = true) : base(databasePath, storeDateTimeAsTicks) { }
+  public SQLiteNetORM(string databasePath, bool storeDateTimeAsTicks = true)
+    : base(databasePath, storeDateTimeAsTicks) { }
 
-  public SQLiteNetORM(string databasePath, SQLiteOpenFlags openFlags, bool storeDateTimeAsTicks = true) : base(databasePath, openFlags, storeDateTimeAsTicks) { }
+  public SQLiteNetORM(string databasePath, SQLiteOpenFlags openFlags, bool storeDateTimeAsTicks = true)
+    : base(databasePath, openFlags, storeDateTimeAsTicks) { }
 
   /// <summary>
   /// Gets a single line of a string.
@@ -197,7 +201,8 @@ public class SQLiteNetORM : SQLiteConnection
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException(SysTranslations.DBRenameTableError.GetLang(tableName, columnOldName, columnNewName), ex);
+      string message = SysTranslations.DBRenameTableError.GetLang(tableName, columnOldName, columnNewName);
+      throw new SQLiteException(message, ex);
     }
   }
 
