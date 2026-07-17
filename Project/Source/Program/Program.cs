@@ -14,14 +14,14 @@
 /// <edited> 2023-04 </edited>
 namespace Ordisoftware.Nutrition.Manager;
 
-using System.IO.Pipes;
-using System.Runtime.Serialization.Formatters.Binary;
-
 /// <summary>
 /// Provides Program class.
 /// </summary>
 static partial class Program
 {
+
+  private const string SoftpediaURL = "";
+  private const string AlternativeToURL = "";
 
   /// <summary>
   /// Indicates the default Settings instance.
@@ -38,8 +38,8 @@ static partial class Program
     try
     {
       Globals.ChronoStartingApp.Start();
-      Globals.SoftpediaURL = "";
-      Globals.AlternativeToURL = "";
+      Globals.SoftpediaURL = SoftpediaURL;
+      Globals.AlternativeToURL = AlternativeToURL;
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       /*
