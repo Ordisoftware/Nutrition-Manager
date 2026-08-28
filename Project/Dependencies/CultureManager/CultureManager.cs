@@ -42,6 +42,7 @@ namespace Infralution.Localization
   [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
   [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
+  [SuppressMessage("Performance", "SS066:Disposable Field Is Not Disposed", Justification = "N/A")]
   public class CultureManager : Component
   {
 
@@ -702,7 +703,7 @@ namespace Infralution.Localization
         //
         if ( isVB )
         {
-          fieldName = fieldName.Substring(1, fieldName.Length - 1);
+          fieldName = fieldName.Substring(1);
         }
 
         // check whether this field is a localized component of the parent
@@ -720,9 +721,9 @@ namespace Infralution.Localization
 
             // if this component is an extender provider then keep track of it
             //
-            if ( childComponent is IExtenderProvider )
+            if ( childComponent is IExtenderProvider provider )
             {
-              extenderProviders[childComponent.GetType()] = childComponent as IExtenderProvider;
+              extenderProviders[childComponent.GetType()] = provider;
             }
           }
         }

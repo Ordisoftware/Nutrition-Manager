@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2024 Olivier Rogier.
+/// Copyright 2004-2026 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -67,9 +67,9 @@ public sealed partial class ExceptionForm : Form
     form.ErrorInfo = eInfo;
     if ( !DebugManager.UseStack )
     {
-      int deltaHeight = form.EditStack.Height + form.Padding.Bottom;
-      form.MinimumSize = new Size(form.MinimumSize.Width, form.MinimumSize.Height - deltaHeight);
-      form.Height -= deltaHeight;
+      int offsetHeight = form.EditStack.Height + form.Padding.Bottom;
+      form.MinimumSize = new Size(form.MinimumSize.Width, form.MinimumSize.Height - offsetHeight);
+      form.Height -= offsetHeight;
       form.SizeGripStyle = SizeGripStyle.Hide;
       form.FormBorderStyle = FormBorderStyle.FixedSingle;
     }

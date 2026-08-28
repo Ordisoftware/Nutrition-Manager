@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2024 Olivier Rogier.
+/// Copyright 2004-2026 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -60,6 +60,7 @@ static public partial class SystemManager
   /// Checks if a file is an executable.
   /// </summary>
   [SuppressMessage("Design", "MA0060:The value returned by Stream.Read/Stream.ReadAsync is not used", Justification = "N/A")]
+  [SuppressMessage("Minor Bug", "S2674:The length returned from a stream read should be checked", Justification = "N/A")]
   static public bool CheckIfFileIsExecutable(string filePath)
   {
     try

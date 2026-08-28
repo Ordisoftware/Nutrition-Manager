@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2024 Olivier Rogier.
+/// Copyright 2004-2026 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -73,6 +73,6 @@ static public partial class StringHelper
   /// <param name="separator">The separator.</param>
   /// <param name="stringSplitOptions">Options for controlling the operation.</param>
   static public string[] Split(this string str, string separator, StringSplitOptions stringSplitOptions)
-    => str.Split(new string[] { separator }, stringSplitOptions);
+    => str.Split([separator], stringSplitOptions);
 
 }

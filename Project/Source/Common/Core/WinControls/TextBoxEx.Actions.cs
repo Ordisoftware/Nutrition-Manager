@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2024 Olivier Rogier.
+/// Copyright 2004-2026 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -35,11 +35,11 @@ public partial class TextBoxEx
       var form = FormsHelper.GetActiveForm();
       if ( form is not null )
       {
-        if ( form.ActiveControl is TextBoxEx )
-          control = form.ActiveControl as TextBoxEx;
+        if ( form.ActiveControl is TextBoxEx textBoxEx )
+          control = textBoxEx;
         else
-        if ( form.ActiveControl is UserControl )
-          control = ( form.ActiveControl as UserControl )?.ActiveControl as TextBoxEx;
+        if ( form.ActiveControl is UserControl userControl )
+          control = userControl.ActiveControl as TextBoxEx;
       }
     }
     if ( control is not null )

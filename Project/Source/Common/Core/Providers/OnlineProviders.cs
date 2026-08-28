@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2024 Olivier Rogier.
+/// Copyright 2004-2026 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -58,6 +58,7 @@ public class OnlineProviders : DataFile
   /// <summary>
   /// Loads or reload data from disk.
   /// </summary>
+  [SuppressMessage("Major Code Smell", "S127:\"for\" loop stop conditions should be invariant", Justification = "N/A")]
   protected override void DoReLoad(string filePath)
   {
     if ( filePath.IsNullOrEmpty() ) return;
@@ -140,7 +141,7 @@ public class OnlineProviders : DataFile
         slice.Insert(index++, item);
       }
     }
-    Items = slices.SelectMany(item => item).ToList();
+    Items = [.. slices.SelectMany(item => item)];
   }
 
 }

@@ -56,6 +56,7 @@ namespace CoolPrintPreview
   [SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "<En attente>")]
   [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "<En attente>")]
   [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "<En attente>")]
+  [SuppressMessage("Performance", "SS066:Disposable Field Is Not Disposed", Justification = "N/A")]
   internal class CoolPrintPreviewControl : UserControl
   {
     //-------------------------------------------------------------
@@ -186,6 +187,7 @@ namespace CoolPrintPreview
     Browsable(false),
     DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
     ]
+    [SuppressMessage("Major Bug", "S1244:Floating point numbers should not be tested for equality", Justification = "<En attente>")]
     public double Zoom
     {
       get { return _zoom; }
